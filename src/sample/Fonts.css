@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "Noto Sans SC";
+    src: local('Noto Sans SC'), url('../fonts/NotoSansSC-Light.otf') format('opentype');
+    /* not working */
+    font-stretch: 50%;
+}
+
+@font-face {
+    font-family: "Noto Serif SC";
+    src: local('Noto Serif SC'), url('../fonts/NotoSerifSC-Light.otf') format('opentype');
+    /* not working */
+    font-stretch: 200%;
+}
+
+.noto-sans-sc {
+    font-family: "Noto Sans SC";
+    font-size: xxx-large;
+}
+
+.noto-serif-sc {
+    font-family: "Noto Serif SC";
+    /* todo Warning:(21, 5) Font property font-family does not have generic default */
+    font-size: xx-small;
+}
