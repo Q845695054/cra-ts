@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "viewname": "赵四",
+      "mobile": 11122223333
+    },
+    {
+      "id": 2,
+      "viewname": "钱五",
+      "mobile": 11122224444
+    },
+    {
+      "mobile": 11122225555,
+      "viewname": "孙二",
+      "id": 3
+    }
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "viewname": "管理员"
+    },
+    {
+      "id": 2,
+      "viewname": "注册用户"
+    }
+  ]
+}
