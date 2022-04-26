@@ -1,0 +1,59 @@
+{
+  "path": "/",
+  "routes": [
+    {
+      "name": "仪表盘",
+      "path": "/dashboard"
+    },
+    {
+      "name": "系统管理",
+      "path": "/sys",
+      "routes": [
+        {
+          "name": "字典管理",
+          "path": "/sys/dict"
+        },
+        {
+          "name": "用户管理",
+          "path": "/sys/user"
+        },
+        {
+          "name": "群组管理",
+          "path": "/sys/group"
+        },
+        {
+          "name": "角色管理",
+          "path": "/sys/role"
+        },
+        {
+          "name": "权限管理",
+          "path": "/sys/perm"
+        }
+      ]
+    },
+    {
+      "name": "内容管理",
+      "path": "/cms",
+      "routes": [
+        {
+          "name": "类别管理",
+          "path": "/cms/category"
+        },
+        {
+          "name": "文章管理",
+          "path": "/cms/article"
+        }
+      ]
+    },
+    {
+      "name": "个人设置",
+      "path": "/profile",
+      "routes": [
+        {
+          "name": "修改密码",
+          "path": "/profile/password"
+        }
+      ]
+    }
+  ]
+}
