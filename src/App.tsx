@@ -1,28 +1,31 @@
 import {Outlet, Link} from "react-router-dom";
-import { Button } from 'antd';
-import { DownloadOutlined } from '@ant-design/icons';
+import {Spin} from "antd";
 
 function App() {
     return (
         <>
-            <Button type="primary" shape="round" icon={<DownloadOutlined />} />
-            <hr/>
             <nav style={{
-                borderRight: '1px solid black'
+                borderRight: '1px solid black',
+                width: 200,
+                float: "left",
+                height: 600,
+                marginRight: 20
             }}>
-                <ol style={{listStyle: 'none'}}>
+                <ol style={{listStyle: 'none', padding: 20}}>
                     <li><Link to="/user">User</Link></li>
                     <li><Link to="/group">Group</Link></li>
                     <li>
                         Sample
-                        <ol style={{listStyle: 'none',marginLeft: '-2em'}}>
+                        <ol style={{listStyle: 'none', padding: 20}}>
                             <li><Link to="/sample/fonts">Fonts</Link></li>
                         </ol>
                     </li>
                 </ol>
             </nav>
             <hr/>
-            <Outlet/>
+            <div style={{padding: 20}}>
+                <Outlet/>
+            </div>
         </>
     );
 }

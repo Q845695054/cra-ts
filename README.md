@@ -6,3 +6,11 @@ json-server.json
 json-server --watch db.json
 ## help
 json-server -h
+
+
+
+# build 
+npm run build
+
+# run as a static server
+serve -s build 
