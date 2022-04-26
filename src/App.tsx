@@ -22,10 +22,7 @@ function App() {
                     </li>
                 </ol>
             </nav>
-            <hr/>
-            <div style={{padding: 20}}>
-                <Outlet/>
-            </div>
+            <Outlet/>
         </>
     );
 }

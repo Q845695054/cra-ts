@@ -30,39 +30,41 @@ const root = ReactDOM.createRoot(
 root.render(
     <BrowserRouter>
         <React.StrictMode>
-            {/*<Routes>*/}
-            {/*    <Route path="/" element={<App/>}>*/}
-            {/*        <Route path="user" element={<User/>}/>*/}
-            {/*        <Route path="group" element={<Group/>}/>*/}
-            {/*        <Route path="sample">*/}
-            {/*            <Route path="fonts" element={<Fonts/>}/>*/}
-            {/*        </Route>*/}
-            {/*    </Route>*/}
-            {/*</Routes>*/}
-
-
             <Routes>
-                <Route path="/" element={<Home/>}>
-                    <Route path="dashboard" element={<Dashboard/>}/>
-                    <Route path="sys">
-                        <Route path="dict" element={<Dict/>}/>
-                        <Route path="user" element={<User />}>
-                            <Route path=":idcard" element={<UserDetail/>} />
-                        </Route>                        <Route path="group" element={<Group/>}/>
-                        <Route path="role" element={<Role/>}/>
-                        <Route path="perm" element={<Perm/>}/>
+                <Route path="/" element={<App/>}>
+                    <Route path="user" element={<User/>}>
+                        <Route path=":idcard" element={<UserDetail/>}/>
                     </Route>
-                    <Route path="cms">
-                        <Route path="category" element={<Category/>}/>
-                        <Route path="article" element={<Article/>}/>
+                    <Route path="group" element={<Group/>}/>
+                    <Route path="sample">
+                        <Route path="fonts" element={<Fonts/>}/>
                     </Route>
-                    <Route path="profile">
-                        <Route path="password" element={<ChangePassword/>}/>
-                    </Route>
-                    <Route path="*" element={<NotFound/>}/>
                 </Route>
-                <Route path="/signIn" element={<SignIn/>}></Route>
             </Routes>
+
+
+            {/*<Routes>*/}
+            {/*    <Route path="/" element={<Home/>}>*/}
+            {/*        <Route path="dashboard" element={<Dashboard/>}/>*/}
+            {/*        <Route path="sys">*/}
+            {/*            <Route path="dict" element={<Dict/>}/>*/}
+            {/*            <Route path="user" element={<User />}>*/}
+            {/*                <Route path=":idcard" element={<UserDetail/>} />*/}
+            {/*            </Route>                        <Route path="group" element={<Group/>}/>*/}
+            {/*            <Route path="role" element={<Role/>}/>*/}
+            {/*            <Route path="perm" element={<Perm/>}/>*/}
+            {/*        </Route>*/}
+            {/*        <Route path="cms">*/}
+            {/*            <Route path="category" element={<Category/>}/>*/}
+            {/*            <Route path="article" element={<Article/>}/>*/}
+            {/*        </Route>*/}
+            {/*        <Route path="profile">*/}
+            {/*            <Route path="password" element={<ChangePassword/>}/>*/}
+            {/*        </Route>*/}
+            {/*        <Route path="*" element={<NotFound/>}/>*/}
+            {/*    </Route>*/}
+            {/*    <Route path="/signIn" element={<SignIn/>}></Route>*/}
+            {/*</Routes>*/}
         </React.StrictMode>
     </BrowserRouter>
 );
