@@ -23,6 +23,9 @@ import ChangePassword from "./pages/profile/ChangePassword";
 import App from "./App";
 import Fonts from "./sample/Fonts";
 
+import {store} from './redux/store'
+import {Provider} from 'react-redux'
+
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
@@ -30,41 +33,43 @@ const root = ReactDOM.createRoot(
 root.render(
     <BrowserRouter>
         <React.StrictMode>
-            <Routes>
-                <Route path="/" element={<App/>}>
-                    <Route path="user" element={<User/>}>
-                        <Route path=":idcard" element={<UserDetail/>}/>
-                    </Route>
-                    <Route path="group" element={<Group/>}/>
-                    <Route path="sample">
-                        <Route path="fonts" element={<Fonts/>}/>
-                    </Route>
-                </Route>
-            </Routes>
+            <Provider store={store}>
+                {/*<Routes>*/}
+                {/*    <Route path="/" element={<App/>}>*/}
+                {/*        <Route path="user" element={<User/>}>*/}
+                {/*            <Route path=":idcard" element={<UserDetail/>}/>*/}
+                {/*        </Route>*/}
+                {/*        <Route path="group" element={<Group/>}/>*/}
+                {/*        <Route path="sample">*/}
+                {/*            <Route path="fonts" element={<Fonts/>}/>*/}
+                {/*        </Route>*/}
+                {/*    </Route>*/}
+                {/*</Routes>*/}
 
 
-            {/*<Routes>*/}
-            {/*    <Route path="/" element={<Home/>}>*/}
-            {/*        <Route path="dashboard" element={<Dashboard/>}/>*/}
-            {/*        <Route path="sys">*/}
-            {/*            <Route path="dict" element={<Dict/>}/>*/}
-            {/*            <Route path="user" element={<User />}>*/}
-            {/*                <Route path=":idcard" element={<UserDetail/>} />*/}
-            {/*            </Route>                        <Route path="group" element={<Group/>}/>*/}
-            {/*            <Route path="role" element={<Role/>}/>*/}
-            {/*            <Route path="perm" element={<Perm/>}/>*/}
-            {/*        </Route>*/}
-            {/*        <Route path="cms">*/}
-            {/*            <Route path="category" element={<Category/>}/>*/}
-            {/*            <Route path="article" element={<Article/>}/>*/}
-            {/*        </Route>*/}
-            {/*        <Route path="profile">*/}
-            {/*            <Route path="password" element={<ChangePassword/>}/>*/}
-            {/*        </Route>*/}
-            {/*        <Route path="*" element={<NotFound/>}/>*/}
-            {/*    </Route>*/}
-            {/*    <Route path="/signIn" element={<SignIn/>}></Route>*/}
-            {/*</Routes>*/}
+                <Routes>
+                    <Route path="/" element={<Home/>}>
+                        <Route path="dashboard" element={<Dashboard/>}/>
+                        <Route path="sys">
+                            <Route path="dict" element={<Dict/>}/>
+                            <Route path="user" element={<User/>}>
+                                <Route path=":idcard" element={<UserDetail/>}/>
+                            </Route> <Route path="group" element={<Group/>}/>
+                            <Route path="role" element={<Role/>}/>
+                            <Route path="perm" element={<Perm/>}/>
+                        </Route>
+                        <Route path="cms">
+                            <Route path="category" element={<Category/>}/>
+                            <Route path="article" element={<Article/>}/>
+                        </Route>
+                        <Route path="profile">
+                            <Route path="password" element={<ChangePassword/>}/>
+                        </Route>
+                        <Route path="*" element={<NotFound/>}/>
+                    </Route>
+                    <Route path="/signIn" element={<SignIn/>}></Route>
+                </Routes>
+            </Provider>
         </React.StrictMode>
     </BrowserRouter>
 );
