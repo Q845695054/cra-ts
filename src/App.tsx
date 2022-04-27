@@ -1,9 +1,21 @@
 import {Outlet, Link} from "react-router-dom";
 import {Spin} from "antd";
+import {useEffect, useState} from "react";
+import PubSub from 'pubsub-js';
 
 function App() {
+
+    const [spinning,setSpinning] = useState(false)
+
+    useEffect(()=>{
+        PubSub.subscribe('global_loading',(message,data)=>{
+            console.log(message,data);
+            setSpinning(data);
+        })
+    })
+
     return (
-        <>
+        <Spin spinning={spinning}>
             <nav style={{
                 borderRight: '1px solid black',
                 width: 200,
@@ -23,7 +35,7 @@ function App() {
                 </ol>
             </nav>
             <Outlet/>
-        </>
+        </Spin>
     );
 }
 
