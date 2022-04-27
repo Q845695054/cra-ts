@@ -23,7 +23,7 @@ export const loadingSlice = createSlice({
 export const { toggle } = loadingSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
-export const spinning = (state: RootState) => state.loading.spinning
+export const getSpinning = (state: RootState) => state.loading.spinning
 
 export default loadingSlice.reducer
 

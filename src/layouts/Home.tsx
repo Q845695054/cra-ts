@@ -7,15 +7,15 @@ import routeData from "../config/route.json";
 import {useNavigate} from "react-router-dom";
 import Logo from "../images/logo192.png";
 import {SYSTEM_NAME} from '../config/config'
-import {Dropdown, Menu, Space, Modal, Avatar} from "antd";
-import {DownOutlined} from "@ant-design/icons";
-import {UserOutlined} from "@ant-design/icons";
-
+import {Dropdown, Menu, Space, Modal, Avatar, Spin} from "antd";
+import {DownOutlined,UserOutlined} from "@ant-design/icons";
+import {useAppSelector} from "../redux/hooks";
 
 export default (props: any) => {
 
+    const spinning = useAppSelector(state => state.loading.spinning)
+
     const navigate = useNavigate();
-    /*const [loading,setLoading] = useState(false);*/
 
     const headerUserMenu = (
         <Menu items={[
@@ -54,7 +54,7 @@ setLoading(false);
     );
 
     return (
-        /*<Spin spinning={loading}>*/
+        <Spin spinning={spinning}>
             <ProLayout
                 style={{
                     height: '100vh',
@@ -97,6 +97,6 @@ setLoading(false);
                     <Outlet/>
                 </PageContainer>
             </ProLayout>
-        /*</Spin>*/
+        </Spin>
     );
 };

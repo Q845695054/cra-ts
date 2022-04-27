@@ -1,9 +1,16 @@
 import {Form, Input, Button, Checkbox, Modal} from 'antd';
 import {UserOutlined, LockOutlined, LoadingOutlined} from '@ant-design/icons';
 import axios from "axios";
+import {useAppDispatch} from "../../redux/hooks";
+import { toggle } from '../../redux/loadingSlice'
 
 const ChangePassword = () => {
+
+    const dispatch = useAppDispatch()
+
     const onFinish = (values: any) => {
+        dispatch(toggle());
+        setTimeout(()=>{dispatch(toggle());},3000);
         // axios.post("").then((response)=>{}).catch(reason => {});
         // return false;
     };
